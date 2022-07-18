@@ -42,6 +42,17 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener {  _, destination, _ ->
+            when(destination.id) {
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow -> {
+                    supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_button_menu)
+                }
+                else -> {
+                    supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
