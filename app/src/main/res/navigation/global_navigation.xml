@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/global_navigation"
+    app:startDestination="@id/nav_global_activity">
+    <activity
+        android:id="@+id/nav_global_activity"
+        android:name="sk.datapac.myapplication.ui.globalscreen.GlobalActivity"
+        tools:layout="@layout/activity_global" />
+</navigation>

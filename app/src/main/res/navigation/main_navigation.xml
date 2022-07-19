@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/main_navigation"
     app:startDestination="@+id/nav_home">
 
     <fragment
@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_gallery_to_nav_gallery_detail"
             app:destination="@id/nav_gallery_detail" />
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_gallery_detail_activity"
+            app:destination="@id/nav_gallery_detail_activity" />
     </fragment>
 
     <fragment
@@ -37,7 +40,17 @@
             app:destination="@id/navigation3" />
     </fragment>
 
+    <activity
+        android:id="@+id/nav_gallery_detail_activity"
+        android:name="sk.datapac.myapplication.ui.gallerydetail.GalleryDetailActivity"
+        tools:layout="@layout/gallery_detail_activity"/>
+
+    <action
+        android:id="@+id/action_global_nav_global_activity"
+        app:destination="@id/global_navigation" />
 
     <include app:graph="@navigation/nested_navigation"/>
+    <include app:graph="@navigation/global_navigation"/>
+
 
 </navigation>
